@@ -57,6 +57,7 @@ Route::delete('friends', ['as' => 'friends_path', 'uses' => 'FriendController@de
 */
 Route::get('groups', ['as' => 'groups_path', 'uses' => 'GroupController@index']);
 Route::get('groups/{id}', ['as' => 'groups_path', 'uses' => 'GroupController@show']);
+Route::post('joinGroup/{id}', 'GroupController@joinGroup');
 // Route::delete('groups', ['as' => 'groups_path', 'uses' => 'GroupController@destroy']);
 /**
 
@@ -89,3 +90,6 @@ Route::post('chatstatus', ['as' => 'chat_status_path', 'uses' => 'ChatStatusCont
   * Chat Message
   */
  Route::post('chat', ['as' => 'conversation_path', 'uses' => 'ChatController@sendMessage']);
+ /**
+  * Groups functions
+  */

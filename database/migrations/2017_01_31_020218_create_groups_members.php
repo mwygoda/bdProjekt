@@ -12,15 +12,14 @@ class CreateGroupsMembersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('groupMembers', function(Blueprint $table)
+		Schema::create('groups_members', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('group_id')->index();
-			$table->integer('user_id')->index();
-			$table->boolean('is_admin');
-			$table->timestamps();
+		  $table->increments('id');
+		  $table->integer('group_id')->index();
+		  $table->integer('user_id')->index();
+		  $table->boolean('is_admin');
+		  $table->timestamps();
 		});
-		//
 	}
 
 	/**
@@ -30,7 +29,7 @@ class CreateGroupsMembersTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('groups_members');
 	}
 
 }

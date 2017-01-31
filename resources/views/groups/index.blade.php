@@ -8,13 +8,31 @@
   </div>
   <div id="center-column" class="col-md-6">
   <div class="users-list">
+    <h3>my groups</h3>
+    @foreach ($myGroups as $myGroup )
+      <div class="media listed-object-close">
+    <a href="groups/{{$myGroup->id}}">{{$myGroup->name}}</a>
+    <div class="pull-right">
+{{-- /// --}}
+
+    </div>
+  </div>
+    @endforeach
+
+    <h3>other groups</h3>
     @foreach ($groups as $group )
+
       <div class="media listed-object-close">
     <a href="groups/{{$group->id}}">{{$group->name}}</a>
     <div class="pull-right">
-    <a href="{!! url('groups') !!}" data-method="post" data-userid="{!! $user->id!!}" class="btn btn-primary add-friend-button btn-sm" role="button">join group</a>
+{{-- /// --}}
+  <form method="post" action="joinGroup/{{$group->id}}">
+    <button type="submit" class="btn btn-primary  btn-sm" >join group
+    </button>
+  </form>
     </div>
   </div>
+
     @endforeach
     {{-- {{$groups}}
   Groups goes here --}}

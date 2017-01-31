@@ -16,7 +16,10 @@ class CustomVerifyCsrfToken extends BaseVerifier
             'friend-requests',
             'friends',
             'logout',
-            'message-delete'
+            'message-delete',
+            'joinGroup',
+            'joinGroup/1'
+
     ];
      /**
      * Handle an incoming request.
